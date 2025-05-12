@@ -1,16 +1,20 @@
 # powerbi-final-project
 Interactive Power BI report for class project — visualizing procedure-level revenue trends over time with filters and calculated measures.
 ## 📁 Files Included
-- `PowerBI_Final.pbix` – Main dashboard file
-- `/Data/` – Folder containing any relevant datasets (if applicable)
+- [AA_Painovich.pbix](./AA_Painovich.pbix) – Final report for Sophia  
+- [Draft for Validation.pbix](./Draft%20for%20Validation.pbix) – Team validation version. Final report for Riley
+- [Final-MMC HB Method 2 Posted Charges.pbix](./Final-MMC%20HB%20Method%202%20Posted%20Charges.pbix) – Posted charges report  
+- [MMC YTD and MTD Rev.pbix](./MMC%20YTD%20and%20MTD%20Rev.pbix) – Revenue trends (MTD/YTD)  
+- [Tyler's Report.pbix](./Tyler%27s%20Report.pbix) – Final report for Tyler  
 - `README.md` – Project overview and instructions (this file)
 
-## 🧭 How to Open the Dashboard
+## How to Open the Dashboard
 1. Download and install [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
-2. Open the file `PowerBI_Final.pbix` using Power BI Desktop.
-3. Use the slicers in the report to filter by service area, posting date, financial class, or aging bucket.
-
-## 📌 Project Summary
+2. Open Power BI Desktop and connect to the UIHC-provided semantic model.
+3. Navigate to the `HSP_ACCOUNT` and `HSP_TRANSACTIONS` tables within the model to locate the relevant variables used in your report.
+4. Use the slicers in the report to filter by service area, posting date, financial class, or aging bucket.
+   
+## Project Summary
 This project supports the University of Iowa Health Care (UIHC) Data Analytics Team in transitioning reports from Tableau to Power BI for more centralized, governable reporting. Our goal was to replicate five operational reports using Power BI connected to UIHC's semantic model. These reports enable easier filtering, visualization, and user interaction, improving access to key metrics for revenue and collections oversight.
 
 Final reports created:
