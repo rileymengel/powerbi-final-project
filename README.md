@@ -67,22 +67,50 @@ Support from our sponsors and consistent team collaboration helped us overcome t
 
 ## How to Recreate or Modify
 
-1. Open the `.pbix` file in Power BI Desktop.  
-2. If you'd like to use different data, go to **Transform Data > Edit Queries** to update the data source.  
-3. Ensure any new data follows the same structure (column names and types).  
-4. Click **Refresh** to update visuals.  
-5. Use slicers to interact with the report.  
+1. Open any `Final` or `WIP` `.pbix` file in Power BI Desktop.
+2. If you'd like to use different data, go to **Transform Data > Edit Queries** to update the data source.
+3. Ensure any new data follows the same structure (column names and types).
+4. Click **Refresh** to update visuals.
+5. Use slicers to interact with the report.
 6. Refer to the project appendix for detailed variable mapping between Tableau and Power BI for each individual report.
 
 ## Report Design Details
 
 ### Mapping: Tableau Report → Power BI
 
-| Tableau Column                        | Power BI Field Used                        |
-|--------------------------------------|--------------------------------------------|
-| Patient Account ID                   | `HSP_ACCOUNT.ACCOUNT_ID`                   |
-| Transaction Type & Amounts          | `HSP_TRANSACTIONS.TRANS_TYPE`, `TRANS_AMT` |
-| Service Area Filters                 | Applied
+We performed a detailed comparison between each original Tableau report and the semantic model fields available in Power BI. This involved:
 
+- Cross-referencing column names from UIHC screenshots and Excel files.  
+- Matching calculated fields and KPIs using DAX expressions.  
+- Ensuring filter logic and layout mirrored the original reports to support user familiarity and continuity.
 
+Key mappings included for each report:
 
+- **Patient Account ID** → `HSP_ACCOUNT.ACCOUNT_ID`  
+- **Transaction Type & Amounts** → `HSP_TRANSACTIONS.TRANS_TYPE`, `TRANS_AMT`  
+- **Service Area Filters** → Applied using slicers tied to the `SERVICE_AREA` field  
+
+## Power BI Tools and Functions Used
+
+We leveraged a variety of Power BI functions and visuals to recreate the original reports:
+
+- **Matrix Table**: Used for cross-tab views (e.g., aging buckets vs. financial class)  
+- **Regular Table**: Used for detailed row-level breakdowns when visual aggregation wasn't necessary  
+- **Card Visuals**: Highlighted KPIs like total account balance or volume of overdue accounts  
+- **Slicers**: Enabled filtering by date, service area, and financial class  
+- **DAX Measures**:
+  - `Total Balance = SUM(HSP_TRANSACTIONS.TRANS_AMT)`  
+  - `Overdue Accounts = CALCULATE(COUNTROWS(...), FILTER(...))`  
+- **Bookmarks & View Options**: To improve navigation and simulate interactive drilldowns  
+
+These tools were selected to best replicate the logic and usability of the original Tableau dashboards while taking advantage of Power BI’s native interactivity.
+
+## Recommendations
+
+- Schedule regular user reviews to ensure ongoing report effectiveness.  
+- Provide training for filter use and interpretation of KPIs.  
+- Consider future enhancements to incorporate additional metrics or automation logic.
+
+---
+
+*Created as part of the BAIS 3500 course at the University of Iowa.*
