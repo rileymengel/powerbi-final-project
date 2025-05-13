@@ -29,28 +29,41 @@ We used a secure, hospital-provided semantic model within Power BI that included
 
 Once data sources were identified, we used Power BI’s model view to establish relationships between tables and DAX formulas to build calculated measures for KPIs. Because the data was pre-cleaned and structured for analysis, most of the work focused on ensuring the outputs and layout matched the original reports. Reports were then validated against screenshots to ensure completeness and accuracy.
 
-## 🧪 Methodology & Challenges
-Our process included:
-- Reviewing existing reports and aligning semantic model fields accordingly
-- Building visuals to mirror the format and layout of legacy Tableau reports
-- Creating calculated measures using DAX where needed
-- Incorporating filters and slicers to improve usability
-- Partner testing and cross-validation to ensure data logic was accurate
-
-Challenges included:
-- Gaining access to Power BI and the semantic model due to system security
-- Navigating unfamiliar healthcare terminology
-- Interpreting a large volume of interrelated variables
-- Building measures without formal documentation
-
-Support from our sponsors and consistent team collaboration helped us overcome these technical hurdles.
-
 ## ✅ How to Recreate or Modify
 1. Open `PowerBI_Final.pbix` in Power BI Desktop.
 2. If you'd like to use different data, go to **Transform Data > Edit Queries** to update the data source.
 3. Ensure any new data follows the same structure (column names and types).
 4. Click **Refresh** to update visuals.
 5. Use slicers to interact with the report.
+
+## Report Design Details
+
+### 🔄 Mapping:Tableau Report → Power BI
+We performed a detailed comparison between each original Tableau report and the semantic model fields available in Power BI. This involved:
+- Cross-referencing column names from UIHC screenshots and Excel files.
+- Matching calculated fields and KPIs using DAX expressions.
+- Ensuring filter logic and layout mirrored the original reports to support user familiarity and continuity.
+
+Key mappings included for each report:
+- **Patient Account ID** → `HSP_ACCOUNT.ACCOUNT_ID`
+- **Transaction Type & Amounts** → `HSP_TRANSACTIONS.TRANS_TYPE`, `TRANS_AMT`
+- **Service Area Filters** → Applied using slicers tied to the `SERVICE_AREA` field
+
+---
+
+### 🛠️ Power BI Tools and Functions Used
+We leveraged a variety of Power BI functions and visuals to recreate the original reports:
+
+- **Matrix Table**: Used for cross-tab views (e.g., aging buckets vs. financial class)
+- **Card Visuals**: Highlighted KPIs like total account balance or volume of overdue accounts
+- **Slicers**: Enabled filtering by date, service area, and financial class
+- **DAX Measures**:
+  - `Total Balance = SUM(HSP_TRANSACTIONS.TRANS_AMT)`
+  - `Overdue Accounts = CALCULATE(COUNTROWS(...), FILTER(...))`
+- **Bookmarks & View Options**: To improve navigation and simulate interactive drilldowns
+
+These tools were selected to best replicate the logic and usability of the original Tableau dashboards while taking advantage of Power BI’s native interactivity.
+
 
 ## 💡 Recommendations
 - Schedule regular user reviews to ensure ongoing report effectiveness.
