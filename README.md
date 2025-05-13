@@ -72,7 +72,7 @@ Support from our sponsors and consistent team collaboration helped us overcome t
 3. Ensure any new data follows the same structure (column names and types).  
 4. Click **Refresh** to update visuals.  
 5. Use slicers to interact with the report.  
-6. Refer to the project appendix for detailed variable mapping between Tableau and Power BI reports.
+6. Refer to the project appendix for detailed variable mapping between Tableau and Power BI for each individual report.
 
 ## Report Design Details
 
