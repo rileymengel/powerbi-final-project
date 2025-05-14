@@ -98,9 +98,7 @@ We leveraged a variety of Power BI functions and visuals to recreate the origina
 - **Regular Table**: Used for detailed row-level breakdowns when visual aggregation wasn't necessary  
 - **Card Visuals**: Highlighted KPIs like total account balance or volume of overdue accounts  
 - **Slicers**: Enabled filtering by date, service area, and financial class  
-- **DAX Measures**:
-  - `Total Balance = SUM(HSP_TRANSACTIONS.TRANS_AMT)`  
-  - `Overdue Accounts = CALCULATE(COUNTROWS(...), FILTER(...))`  
+- **DAX Measures** Filtered to specific reports; additional context can be found in the report appendix
 - **Bookmarks & View Options**: To improve navigation and simulate interactive drilldowns  
 
 These tools were selected to best replicate the logic and usability of the original Tableau dashboards while taking advantage of Power BI’s native interactivity.
